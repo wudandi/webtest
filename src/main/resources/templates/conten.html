@@ -2,28 +2,20 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>知识点查看</title>
+    <title>数据结构</title>
 </head>
 <body style="text-align:center">
 <br>
 <h2>数据结构查看</h2>
-<div>
-    <br>
-    <form action="/login" method="post">
-        <label for="">知识点</label>
-        <input type="text" name="point">
 
-        <input type="submit" value="查看">
-    </form>
-    <h2 th:utext="${msg2}"></h2>
-</div>
 <div>
     <br>
     <form action="/deleteuser" method="post">
-        <label for="">知识点</label>
+        <label for="">目录</label>
         <input type="text" name="point">
 
         <input type="submit" value="删除">
+        <input type="submit" value="查看">
     </form>
     <h2 th:utext="${msg3}"></h2>
 </div>
@@ -35,9 +27,9 @@
         <br>
         <input type="text" name="point">
         <br>
-        <label for="">详细说明</label>
+        <label for="">知识点介绍</label>
         <br>
-        <textarea name="explanation" style="width:200px;height:60px;"></textarea>
+        <textarea name="explanation" style="width:800px;height:150px;"></textarea>
         <br>
         <input type="submit" value="更改说明">
     </form>

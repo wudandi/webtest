@@ -4,15 +4,22 @@
     <meta charset="UTF-8">
     <title>查看全部记录</title>
 </head>
-<body>
+<body style="text-align: center;">
 <form action="/login">
-    <table  style="margin-top:10px;margin-left:20px;" border="1">
+
+    <table style="margin-top:10px;margin-left:20px;" border="1">
         <thead>
-        <tr>
-            <th>序号</th>
-            <th>知识点</th>
-            <th>详细说明</th>
-        </tr>
+        <div>
+            <br>
+            <label for="">序号</label>
+            <br>
+            <input type="text" name="point">
+            <br>
+            <label for="">详细说明</label>
+            <br>
+            <textarea name="explanation" style="width:800px;height:150px;"></textarea>
+        </div>
+
 
         <tr th:each="User:${userList}" style="text-align:center;vertical-align:middle;">
             <td th:text="${User.ID}"></td>
@@ -23,7 +30,7 @@
     </table>
 
     <br>
-    <input style="margin-left:200px" type="submit" value="返回" >
+    <input style="margin-left:20px" type="submit" value="返回" >
 </form>
 </body>
 </html>

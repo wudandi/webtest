@@ -2,11 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>数据结构知识点</title>
+    <title>数据结构管理</title>
 </head>
 <body style="text-align:center">
 <br>
-<h2>欢迎进入数据结构知识点管理页面</h2>
+<h2>数据结构管理</h2>
 <div >
     <br><br>
     <form action="/register" method="post">
@@ -16,7 +16,7 @@
         <br>
         <label for="">详细说明</label>
         <br>
-        <textarea name="explanation" style="width:200px;height:60px;"></textarea>
+        <textarea name="explanation" style="width:800px;height:150px;"></textarea>
         <br>
         <input type="submit" value="添加">
     </form>
@@ -26,10 +26,10 @@
 <div>
     <br><br>
     <form action="/getuser" method="post">
-        <label for="">知识点</label>
+        <label for="">目录</label>
         <input type="text" name="point">
 
-        <input type="submit" value="查找知识点">
+        <input type="submit" value="查找">
     </form>
     <h2 th:utext="${msg}"></h2>
 </div>

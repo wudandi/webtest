@@ -19,12 +19,12 @@ public class controllers{
     @Autowired
     private UserMapper userMapper;
 
-    @GetMapping("/register")
+    @GetMapping("register")
     public String reg() {
-        return "register";
+        return "management";
     }
 
-    @RequestMapping("/register")
+    @RequestMapping("register")
     public String register(HttpServletRequest request, Map<String, Object> map) {
         String point = request.getParameter("point");
         String explanation = request.getParameter("explanation");
@@ -36,57 +36,57 @@ public class controllers{
         User user1 = userMapper.getuser(point);
         if (user1 != null) {
             map.put("msg1", "该知识点已经添加，无需重复添加！");
-            return "register";
+            return "management";
         } else {
             userMapper.adduser(user);
-            return "login";
+            return "conten";
         }
 
     }
 
-    @RequestMapping("/getuser")
+    @RequestMapping("getuser")
     public String getuser(HttpServletRequest request, Map<String, Object> map) {
         String point = request.getParameter("point");
         User user = userMapper.getuser(point);
         if (user != null) {
             map.put("msg", "此知识点已经记录，可直接查看！");
-            return "register";
+            return "management";
         } else {
             map.put("msg", "此知识点未记录，可添加记录！");
-            return "register";
+            return "management";
         }
     }
 
-    @RequestMapping("/login")
+    @RequestMapping("login")
     public String login(HttpServletRequest request, Map<String, Object> map) {
         String point = request.getParameter("point");
         String explanation = request.getParameter("explanation");
         User user = userMapper.getuser(point);
         if (user != null) {
             map.put("msg2", point + ":" + user.getExplanation());
-            return "login";
+            return "conten";
         } else {
             map.put("msg2", "该知识点不存在！");
-            return "login";
+            return "conten";
         }
 
     }
 
-    @RequestMapping("/deleteuser")
+    @RequestMapping("deleteuser")
     public String deleteuser(HttpServletRequest request, Map<String, Object> map) {
         String point = request.getParameter("point");
         User getuser = userMapper.getuser(point);
         if (getuser != null) {
             userMapper.deleteuser(point);
             map.put("msg4", "该知识点已成功删除！");
-            return "login";
+            return "conten";
         } else {
             map.put("msg4", "该知识点不存在！");
-            return "login";
+            return "conten";
         }
     }
 
-    @RequestMapping("/updateuser")
+    @RequestMapping("updateuser")
     public String update(HttpServletRequest request, Map<String, Object> map) {
         String point = request.getParameter("point");
         String explanation = request.getParameter("explanation");
@@ -94,14 +94,14 @@ public class controllers{
         if (getuser != null) {
             userMapper.updateuser(point, explanation);
             map.put("msg3", "该知识点详细说明已更新！");
-            return "login";
+            return "conten";
         } else {
             map.put("msg3", "该知识点不存在！");
-            return "login";
+            return "conten";
         }
     }
 
-    @RequestMapping("/getallusers")
+    @RequestMapping("findAll")
     public String getallusers(HttpServletRequest request, Map<String, Object> map) {
         List<User> userList = userMapper.getallusers();
         int count = userList.size();
