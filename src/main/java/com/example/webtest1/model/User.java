@@ -4,8 +4,18 @@ import lombok.Data;
 
 @Data
 public class User {
-    private String username;
-    private String password;
+    private String point;
+    private String explanation;
+    private String ID;
 
+    public User(){
+
+    }
+
+    public User(String id, String point, String explannation){
+        this.setID(id);
+        this.setExplanation(explannation);
+        this.setPoint(point);
+    }
 
 }
