@@ -14,9 +14,6 @@ public interface UserMapper {
     @Select("select * from user where point=#{point}")
     User getuser(String point);
 
-    @Select("select * from user where point=#{point}")
-    User login(String point,String explanation);
-
     @Delete("delete from user where point=#{point}")
     void deleteuser(String point);
 

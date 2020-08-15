@@ -31,15 +31,13 @@ public class controllers{
         User user = new User();
         user.setPoint(point);
         user.setExplanation(explanation);
-
-
         User user1 = userMapper.getuser(point);
         if (user1 != null) {
             map.put("msg1", "该知识点已经添加，无需重复添加！");
             return "management";
         } else {
             userMapper.adduser(user);
-            return "conten";
+            return "content";
         }
 
     }
@@ -64,10 +62,10 @@ public class controllers{
         User user = userMapper.getuser(point);
         if (user != null) {
             map.put("msg2", point + ":" + user.getExplanation());
-            return "conten";
+            return "content";
         } else {
             map.put("msg2", "该知识点不存在！");
-            return "conten";
+            return "content";
         }
 
     }
@@ -79,10 +77,10 @@ public class controllers{
         if (getuser != null) {
             userMapper.deleteuser(point);
             map.put("msg4", "该知识点已成功删除！");
-            return "conten";
+            return "content";
         } else {
             map.put("msg4", "该知识点不存在！");
-            return "conten";
+            return "content";
         }
     }
 
@@ -94,10 +92,10 @@ public class controllers{
         if (getuser != null) {
             userMapper.updateuser(point, explanation);
             map.put("msg3", "该知识点详细说明已更新！");
-            return "conten";
+            return "content";
         } else {
             map.put("msg3", "该知识点不存在！");
-            return "conten";
+            return "content";
         }
     }
 
@@ -109,7 +107,7 @@ public class controllers{
                 .mapToObj(index -> new User(String.valueOf(index + 1), userList.get(index).getPoint(), userList.get(index).getExplanation()))
                 .collect(Collectors.toList());
         map.put("userList", newUserList);
-        return "getallusers";
+        return "findAll";
     }
 
 }
