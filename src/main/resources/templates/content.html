@@ -3,42 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <title>数据结构</title>
+    <style>
+        body{
+            height: 50%;
+            padding: 100px;
+            background-color: rgb(55, 73, 101);
+        }
+        textarea{
+            font-size:18px;
+            color: rgb(0, 0, 0);
+        }
+    </style>
 </head>
-<body style="text-align:center">
-<br>
-<h2>数据结构查看</h2>
 
-<div>
+<body>
+<h2 style="text-align:center">数据结构查看</h2>
+
+<div style="text-align:center">
     <br>
     <form action="/deleteuser" method="post">
         <label for="">目录</label>
         <input type="text" name="point">
-
-        <input type="submit" value="删除">
         <input type="submit" value="查看">
     </form>
     <h2 th:utext="${msg3}"></h2>
 </div>
 
 <div>
-    <br>
     <form action="/updateuser" method="post">
-        <label for="">知识点</label>
+        <label for="">名称</label>
         <br>
         <input type="text" name="point">
-        <br>
+        <br><br>
         <label for="">知识点介绍</label>
         <br>
         <textarea name="explanation" style="width:800px;height:150px;"></textarea>
         <br>
         <input type="submit" value="更改说明">
+        <input type="submit" value="删除">
     </form>
     <h2 th:utext="${msg4}"></h2>
 </div>
 
 <div>
     <br>
-    <form action="/getallusers" method="post">
+    <form action="/findAll" method="post">
         <input type="submit" value="查看全部记录">
     </form>
 </div>

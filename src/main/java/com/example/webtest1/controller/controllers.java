@@ -33,7 +33,7 @@ public class controllers{
         user.setExplanation(explanation);
         User user1 = userMapper.getuser(point);
         if (user1 != null) {
-            map.put("msg1", "该知识点已经添加，无需重复添加！");
+            map.put("msg1", "该知识点已经添加");
             return "management";
         } else {
             userMapper.adduser(user);
