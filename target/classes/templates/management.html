@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>数据结构管理系统</title>
+    <style>
+        body{
+            height: 50%;
+            padding: 100px;
+            background-color: rgb(47, 132, 125);
+        }
+        textarea{
+            font-size:18px;
+            color: rgb(0, 0, 0);
+        }
+    </style>
+</head>
+<body>
+<h2  style="text-align:center;color: rgb(87,16,59);">数据结构管理系统</h2>
+<div>
+    <br><br>
+    <form action="/register" method="post">
+        <label for="" style="color: rgb(87,16,59)">名称</label>
+        <br>
+        <input type="text" name="point">
+        <br>
+        <label for="" style="color: rgb(87,16,59)">详细说明</label>
+        <br>
+        <textarea name="explanation" style="width:800px;height:150px;">
+        </textarea>
+        <br>
+        <input type="submit" value="添加">
+    </form>
+    <h2 th:utext="${msg1}"></h2>
+</div>
+
+<div>
+    <form action="/getuser" method="post">
+        <label for="" style="color: rgb(87,16,59)">目录</label>
+        <br>
+        <input type="text" name="point">
+        <input type="submit" value="查找">
+    </form>
+    <h2 th:utext="${msg}"></h2>
+</div>
+</body>
+</html>
