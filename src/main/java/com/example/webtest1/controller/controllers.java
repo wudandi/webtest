@@ -91,7 +91,7 @@ public class controllers{
         User getuser = userMapper.getuser(point);
         if (getuser != null) {
             userMapper.updateuser(point, explanation);
-            map.put("msg3", "该知识点详细说明已更新！");
+            map.put("msg3", "该知识点更新成功！");
             return "content";
         } else {
             map.put("msg3", "该知识点不存在！");

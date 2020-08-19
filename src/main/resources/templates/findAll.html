@@ -23,16 +23,25 @@
         <div>
             <br>
             <label for="">目录</label>
-            <input type="text" name="point">
+            <select style="width:200px;height:20px;">
+                <option value="point">树</option>
+                <option value="point">栈</option>
+                <option value="point">队列</option>
+                <option value="point">堆</option>
+                <option value="point">散列表</option>
+                <option value ="point">链表</option>
+                <option value="point">图</option>
+                <option value="point">数组</option>
+            </select>
+<!--            <input type="text" name="point">-->
             <input type="submit" value="查看">
-            <br>
+            <br><br><br>
             <label for="">详细说明</label>
             <br>
             <textarea name="explanation" style="width:800px;height:150px;"></textarea>
         </div>
 
         <tr th:each="User:${userList}" style="text-align:center;vertical-align:middle;">
-            <td th:text="${User.ID}"></td>
             <td th:text="${User.point}"></td>
             <td th:text="${User.explanation}"></td>
         </tr>
