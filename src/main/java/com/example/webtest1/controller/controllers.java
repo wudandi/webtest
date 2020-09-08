@@ -55,6 +55,10 @@ public class controllers{
         }
     }
 
+    @GetMapping("/login")
+    public String info_login(){
+        return "management";
+    }
     @RequestMapping("login")
     public String login(HttpServletRequest request, Map<String, Object> map) {
         String point = request.getParameter("point");
